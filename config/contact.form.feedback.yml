@@ -1,4 +1,4 @@
-uuid: 272141dc-34f8-4ecb-af35-45b115f844c3
+uuid: 7e7e4deb-27d5-4d2a-98ae-f54a8455bf83
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - joshua@radcampaign.com
+  - diamond.joshh@gmail.com
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

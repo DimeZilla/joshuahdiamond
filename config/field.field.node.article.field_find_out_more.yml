@@ -1,0 +1,23 @@
+uuid: 5ebe8fe2-cd0e-4b0c-a758-d9d95de8c23e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_find_out_more
+    - node.type.article
+  module:
+    - link
+id: node.article.field_find_out_more
+field_name: field_find_out_more
+entity_type: node
+bundle: article
+label: 'Find out more'
+description: 'Add a link'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

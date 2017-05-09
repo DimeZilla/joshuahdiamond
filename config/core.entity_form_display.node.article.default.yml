@@ -1,10 +1,11 @@
-uuid: 3af9ba34-441b-4041-98cc-668e40bf18f5
+uuid: 65a8cfe3-fafb-42bc-a04b-46e05d6d85f2
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_find_out_more
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.thumbnail
@@ -12,6 +13,7 @@ dependencies:
   module:
     - comment
     - image
+    - link
     - path
     - text
 _core:
@@ -42,6 +44,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_find_out_more:
+    weight: 31
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_image:
     type: image_image
     weight: 4
