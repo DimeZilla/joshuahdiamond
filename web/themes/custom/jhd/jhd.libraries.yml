@@ -1,0 +1,6 @@
+global-theming:
+  css:
+    theme:
+      dist/css/main.css: {}
+  js:
+    dist/js/main.js: {}

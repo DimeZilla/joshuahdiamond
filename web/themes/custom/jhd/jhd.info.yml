@@ -1,0 +1,7 @@
+name: "Josh's Theme"
+type: theme
+description: "My awesome outstandingly great theme"
+core: 8.x
+base theme: stark
+libraries:
+  - 'jhd/global-theming'
