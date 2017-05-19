@@ -1,3 +1,5 @@
-console.log("hello");
-console.log("anything new here?");
-console.log("hmmm, anything else new?? at all?");
+let consoleFunc = (args) => {
+  console.log(args);
+};
+
+consoleFunc("Babel Support?");

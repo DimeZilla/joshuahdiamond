@@ -1,9 +1,8 @@
 const gulp         = require('gulp');
 
 // webpack a go go
-var webpack      = require('gulp-webpack');
-var wpConfig     = require('./webpack.config');
-var wpBundler    = webpack(wpConfig);
+const webpack    = require('webpack-stream');
+let wpConfig     = require('./webpack.config');
 
 console.log(wpConfig.output);
 
@@ -68,33 +67,26 @@ gulp.task('minify-css', ['postcss'], () => {
 // Put your webpack on and lets fly
 gulp.task('webpack', () => {
   return gulp.src('./assets/app/index.js')
-    .pipe(wpBundler); 
+    .pipe(webpack( wpConfig ))
+    .pipe(gulp.dest('dist/js/'));
 });
 
 gulp.task('watch', () => {
 
   browserSync.init({
-    proxy: config.devUrl,
-    //middleware for webpack
-      middleware: [
-      webpackDevMid(wpBundler, {
-        publicPath: wpConfig.output.path,
-        stats: { colors: true }
-      }),
-      webpackHotMid(wpBundler)
-    ]
+    proxy: config.devUrl
   });
-  
+
   let reload = () => {
     browserSync.reload();
   };
 
   gulp.watch('./assets/scss/*', ['sass', reload]);
   gulp.watch('./assets/scss/**/*', ['sass', reload]);
-  
-//  gulp.watch('./assets/app/*', ['webpack',reload]);
-//  gulp.watch('./assests/app/**/*', ['webpack',reload]); 
- 
+
+  gulp.watch('./assets/app/*', ['webpack',reload]);
+  gulp.watch('./assests/app/**/*', ['webpack',reload]);
+
 });
 
 gulp.task('default', ['minify-css']);
