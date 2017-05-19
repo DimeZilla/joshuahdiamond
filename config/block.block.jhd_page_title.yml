@@ -1,0 +1,20 @@
+uuid: e93fa07c-a9b7-4951-9701-d0e55798d81e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - jhd
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: jhd_page_title
+theme: jhd
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

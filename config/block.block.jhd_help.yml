@@ -1,0 +1,22 @@
+uuid: 453e6e4a-f8cf-4cbe-858e-412e684fe155
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - jhd
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: jhd_help
+theme: jhd
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

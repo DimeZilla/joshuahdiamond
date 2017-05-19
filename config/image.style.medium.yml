@@ -1,4 +1,4 @@
-uuid: cd5d2ff3-87d5-47a5-bbbb-a23a5386811c
+uuid: 78dc837b-25c5-43d3-8bcd-37fb63e4ceb1
 langcode: en
 status: true
 dependencies: {  }
@@ -15,10 +15,3 @@ effects:
       width: 220
       height: 220
       upscale: false
-  385fd305-c755-4ed9-b73e-7adf07dd9609:
-    uuid: 385fd305-c755-4ed9-b73e-7adf07dd9609
-    id: image_scale_and_crop
-    weight: 3
-    data:
-      width: 220
-      height: 220
