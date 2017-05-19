@@ -1,10 +1,8 @@
 const gulp         = require('gulp');
-
+const path         = require('path');
 // webpack a go go
 const webpack    = require('webpack-stream');
 let wpConfig     = require('./webpack.config');
-
-console.log(wpConfig.output);
 
 // browser sync action
 const webpackDevMid= require('webpack-dev-middleware');
@@ -21,6 +19,9 @@ const flexibility  = require('postcss-flexibility');
 const postcss      = require('gulp-postcss');
 const cleanCSS     = require('gulp-clean-css');
 
+
+// lets run some nifty shell commands
+const shell        = require('gulp-shell');
 
 // set your devUrl for browserSync
 let config = {
@@ -71,6 +72,26 @@ gulp.task('webpack', () => {
     .pipe(gulp.dest('dist/js/'));
 });
 
+/*const exec = require('child_process').execFile;
+//maybe exec
+gulp.task('cr', function(cb) {
+  let ourShell = process.env.shell;
+
+  // support for windows cygwin
+  if(process.env.TERM == 'cygwin'){
+    ourShell = '/cygwin64' + ourShell + '.exe ';
+  }
+
+  return exec(['drush cr'], {
+      shell: path.resolve(ourShell),
+      cwd: path.resolve(process.cwd())
+    }, function(err, stdout, stderr){
+      console.log(stdout, stderr);
+      cb(err);
+    });
+});*/
+
+
 gulp.task('watch', () => {
 
   browserSync.init({
@@ -81,11 +102,17 @@ gulp.task('watch', () => {
     browserSync.reload();
   };
 
+  // if any of our sass assets change, lets reload
   gulp.watch('./assets/scss/*', ['sass', reload]);
   gulp.watch('./assets/scss/**/*', ['sass', reload]);
 
+  // if any of our js assets, lets run webpack
   gulp.watch('./assets/app/*', ['webpack',reload]);
   gulp.watch('./assests/app/**/*', ['webpack',reload]);
+
+  // if any of our templates change, lets also reload
+  gulp.watch('./templates/*', reload);
+  gulp.watch('./templates/**/*', reload);
 
 });
 
