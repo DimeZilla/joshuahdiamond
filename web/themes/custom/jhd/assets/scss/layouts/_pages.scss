@@ -1,0 +1,49 @@
+html{
+  height: 100%;
+  body {
+    height: 100%;
+
+    .layout-container {
+      height: 100%;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.sidebar {
+  height: 100%;
+  background-color: $primary-color;
+  color: white;
+  a {
+    color: white;
+    font-variant: small-caps;
+    text-decoration: none;
+  }
+  ul li {
+    width: 100%;
+  }
+  div.search-block-form{
+    padding: 10px 0;
+    form#search-block-form {
+      input.form-search {
+        background-color: white;
+        height: 2.2rem;
+        margin-bottom: 0.4rem;
+      }
+      input.form-submit {
+        @extend .btn;
+        @extend .waves-effect;
+        @extend .waves-light;
+      }
+    }
+  }
+
+}
+
+#hi {
+  color: blue;
+}
+
+#wowTheChanges {
+  font-size: 400px;
+}

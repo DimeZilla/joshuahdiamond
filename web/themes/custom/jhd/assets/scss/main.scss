@@ -1,9 +1,12 @@
-#block-jhd-branding {
-  background-color: green;
-}
-#hi {
-  color: blue;
-}
-#wowTheChanges {
-  font-size: 400px;
-}
+/*
+ * @file
+ * The main scss file. files we are including as dependencies
+ * should be included first.
+ */
+
+@import 'dependencies/config';
+
+@import "globals/variables";
+
+@import "globals/normalize"; // this should always be on top
+@import "layouts/pages";
